@@ -1,0 +1,2 @@
+debian/bin/p2parkd usr/bin
+src/p2parkd usr/lib/p2park

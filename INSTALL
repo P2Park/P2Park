@@ -1,0 +1,9 @@
+Building P2Park
+
+See doc/readme-qt.rst for instructions on building P2Park QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of P2Park.
+
+See doc/build-*.txt for instructions on building p2parkd,
+the intended-for-services, no-graphical-interface, reference
+implementation of P2Park.

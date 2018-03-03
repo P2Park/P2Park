@@ -1,0 +1,26 @@
+src/*.exe
+src/p2park
+src/p2parkd
+src/test_p2park
+src/build.h
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+.p2park
+#compilation and Qt preprocessor part
+*.qm
+Makefile
+p2park-qt
+#resources cpp
+qrc_*.cpp
+#qt creator
+*.pro.user
+#mac specific
+.DS_Store
+build
+
+!src/leveldb/Makefile

@@ -20,7 +20,7 @@ struct SeedSpec6 {
 
 #include "chainparamsseeds.h"
 
-int64_t genTime = 1507122108;
+int64_t genTime = 1520110835;
 
 void MineGenesis(CBlock genesis){
     // This will figure out a valid hash and Nonce if you're creating a different genesis block:
@@ -86,7 +86,7 @@ public:
         // be spent as it did not originally exist in the database.
         //
 
-        const char* pszTimestamp = "BBC News: Theresa May battles a sore throat and prankster in conference speech.";
+        const char* pszTimestamp = "BBC News 3rd March 2018: UK weather: Rail passengers face continued disruption";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));

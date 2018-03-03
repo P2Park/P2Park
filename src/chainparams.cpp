@@ -100,12 +100,12 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = genTime;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 4048505;
+        genesis.nNonce   = 1630592;
 
         hashGenesisBlock = genesis.GetHash();
 //        MineGenesis(genesis); // mine the genesis block only, disable after solved
-        assert(hashGenesisBlock == uint256("0x00000aad5c5d97f37c02dc24f5fec9d2a45c5265f7d69b9f22d596f45a639d7f"));
-        assert(genesis.hashMerkleRoot == uint256("0xc4db2593f7a96c3cba7ca5bc183599dbdce715221844c1cbc768e826321211b0"));
+        assert(hashGenesisBlock == uint256("0x00000c0605d405794b2cb8b1bac3e8ac7e81b17e8ce7b5f043f9b027649dbe25"));
+        assert(genesis.hashMerkleRoot == uint256("0xc6749cdb65e96eb92b77b95f61ff3eaa9f439b06a8b456f1cbccb130717cbab4"));
 
         vSeeds.push_back(CDNSSeedData("p2pk001.ffptech.com",  "p2pk001.ffptech.com"));
         vSeeds.push_back(CDNSSeedData("p2pk2.ffptech.com",  "p2pk2.ffptech.com"));
@@ -164,10 +164,10 @@ public:
         strDataDir = "testnet";
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 994399;
+        genesis.nNonce = 541712;
 //        MineGenesis(genesis); // mine the genesis block only, disable after solved
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000002f1191e8389e02391041f8977e321de038a449fcc3d6493482db320fff"));
+        assert(hashGenesisBlock == uint256("0x00000b20baf7d0f6328d90b9d936d1a7774bd0530da8f09d9b50c7298c03d872"));
 
         vFixedSeeds.clear();
 //        vSeeds.clear();
@@ -201,12 +201,12 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
         genesis.nTime = genTime;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2133278;
+        genesis.nNonce = 496894;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 28895;
         strDataDir = "regtest";
-//        MineGenesis(genesis); // mine the genesis block only, disable after solved
-        assert(hashGenesisBlock == uint256("0x000002f4561c03258b561e9b19d7a6eca8496208804065b873da9f156e809523"));
+        MineGenesis(genesis); // mine the genesis block only, disable after solved
+        assert(hashGenesisBlock == uint256("0x00000adacb2c37359a3082aedf0725da3e4ca068b8dda6523e3dc56e2ab5d990"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }

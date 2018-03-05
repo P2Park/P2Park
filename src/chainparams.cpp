@@ -205,7 +205,7 @@ public:
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 28895;
         strDataDir = "regtest";
-        MineGenesis(genesis); // mine the genesis block only, disable after solved
+//        MineGenesis(genesis); // mine the genesis block only, disable after solved
         assert(hashGenesisBlock == uint256("0x00000adacb2c37359a3082aedf0725da3e4ca068b8dda6523e3dc56e2ab5d990"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.

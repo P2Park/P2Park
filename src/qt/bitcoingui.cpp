@@ -170,6 +170,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     frameBlocksLayout->addWidget(labelConnectionsIcon);
     frameBlocksLayout->addWidget(labelBlocksIcon);
 
+    toolbar->addWidget(frameBlocks);
 
     if (GetBoolArg("-staking", true))
     {
@@ -195,7 +196,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
-    statusBar()->addPermanentWidget(frameBlocks);
+    statusBar()->setObjectName("statusBar");
 
     syncIconMovie = new QMovie(":/movies/update_spinner", "mng", this);
 
@@ -360,7 +361,7 @@ void BitcoinGUI::createMenuBar()
 static QWidget* makeToolBarSpacer()
 {
     QWidget* spacer = new QWidget();
-    spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     spacer->setStyleSheet("QWidget { background: none; }");
     return spacer;
 }

@@ -110,14 +110,14 @@ public:
         vSeeds.push_back(CDNSSeedData("p2pk001.ffptech.com",  "p2pk001.ffptech.com"));
         vSeeds.push_back(CDNSSeedData("p2pk2.ffptech.com",  "p2pk2.ffptech.com"));
         vSeeds.push_back(CDNSSeedData("p2pktest.ffptech.com", "p2pktest.ffptech.com"));
-        vSeeds.push_back(CDNSSeedData("node01.p2park.com",  "node01.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node02.p2park.com",  "node02.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node03.p2park.com",  "node03.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node04.p2park.com",  "node04.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node05.p2park.com",  "node05.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node06.p2park.com",  "node06.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node07.p2park.com",  "node07.p2park.com"));
-        vSeeds.push_back(CDNSSeedData("node08.p2park.com",  "node08.p2park.com"));
+        vSeeds.push_back(CDNSSeedData("node01.p2park.io",  "node01.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node02.p2park.io",  "node02.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node03.p2park.io",  "node03.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node04.p2park.io",  "node04.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node05.p2park.io",  "node05.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node06.p2park.io",  "node06.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node07.p2park.io",  "node07.p2park.io"));
+        vSeeds.push_back(CDNSSeedData("node08.p2park.io",  "node08.p2park.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 55);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 132);

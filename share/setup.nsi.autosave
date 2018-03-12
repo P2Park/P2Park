@@ -7,7 +7,7 @@ SetCompressor /SOLID lzma
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.3.0
 !define COMPANY "p2park project"
-!define URL http://www.p2park.com/
+!define URL http://www.p2park.io/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/p2park.ico"

@@ -19,7 +19,7 @@ Build-Depends: debhelper,
  libqt4-dev,
  libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: http://www.p2park.com/
+Homepage: http://www.p2park.io/
 Vcs-Git: git://github.com/p2park/p2park/.git
 Vcs-Browser: http://github.com/p2park/p2park/
 

@@ -249,13 +249,11 @@ Value getworkex(const Array& params, bool fHelp)
     if (IsInitialBlockDownload())
         throw JSONRPCError(-10, "P2Park is downloading blocks...");
 
-    if (pindexBest->nHeight >= Params().LastPOWBlock()) {
-        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
-    }
-
     int fPoW_Switch = GetArg("-powenable", 0);
 
-    if (fPoW_Switch == 0) {
+    if (pindexBest->nHeight >= Params().LastPOWBlock()) {
+        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+    } else if (fPoW_Switch == 0) {
         throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
     }
 
@@ -390,12 +388,11 @@ Value getwork(const Array& params, bool fHelp)
     if (IsInitialBlockDownload())
         throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "P2Park is downloading blocks...");
 
-    if (pindexBest->nHeight >= Params().LastPOWBlock())
-        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
-
     int fPoW_Switch = GetArg("-powenable", 0);
 
-    if (fPoW_Switch == 0) {
+    if (pindexBest->nHeight >= Params().LastPOWBlock()) {
+        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+    } else if (fPoW_Switch == 0) {
         throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
     }
 
@@ -540,12 +537,11 @@ Value getblocktemplate(const Array& params, bool fHelp)
     if (IsInitialBlockDownload())
         throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "P2Park is downloading blocks...");
 
-    if (pindexBest->nHeight >= Params().LastPOWBlock())
-        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
-
     int fPoW_Switch = GetArg("-powenable", 0);
 
-    if (fPoW_Switch == 0) {
+    if (pindexBest->nHeight >= Params().LastPOWBlock()) {
+        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+    } else if (fPoW_Switch == 0) {
         throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
     }
 
@@ -720,7 +716,9 @@ Value submitblock(const Array& params, bool fHelp)
 
 Value setgenerate(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() < 1 || params.size() > 2)
+    int fPoW_Switch = GetArg("-powenable", 0);
+
+    if (fHelp || params.size() < 1 || params.size() > 2 || fPoW_Switch == 0)
         throw runtime_error(
             "setgenerate <generate> [genproclimit]\n"
             "<generate> is true or false to turn generation on or off.\n"

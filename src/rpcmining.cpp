@@ -718,11 +718,19 @@ Value setgenerate(const Array& params, bool fHelp)
 {
     int fPoW_Switch = GetArg("-powenable", 0);
 
-    if (fHelp || params.size() < 1 || params.size() > 2 || fPoW_Switch == 0)
+    if (fHelp || params.size() < 1 || params.size() > 2){
         throw runtime_error(
             "setgenerate <generate> [genproclimit]\n"
             "<generate> is true or false to turn generation on or off.\n"
             "Generation is limited to [genproclimit] processors, -1 is unlimited.");
+    }
+
+    if (fHelp || fPoW_Switch == 0){
+        throw runtime_error(
+            "PoW block generation not allowed\n");
+    }
+
+
 
     bool fGenerate = true;
     if (params.size() > 0)

@@ -249,8 +249,15 @@ Value getworkex(const Array& params, bool fHelp)
     if (IsInitialBlockDownload())
         throw JSONRPCError(-10, "P2Park is downloading blocks...");
 
-    if (pindexBest->nHeight >= Params().LastPOWBlock())
+    if (pindexBest->nHeight >= Params().LastPOWBlock()) {
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+    }
+
+    int fPoW_Switch = GetArg("-powenable", 0);
+
+    if (fPoW_Switch == 0) {
+        throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
+    }
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -385,6 +392,12 @@ Value getwork(const Array& params, bool fHelp)
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+
+    int fPoW_Switch = GetArg("-powenable", 0);
+
+    if (fPoW_Switch == 0) {
+        throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
+    }
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;    // FIXME: thread safety
@@ -529,6 +542,12 @@ Value getblocktemplate(const Array& params, bool fHelp)
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+
+    int fPoW_Switch = GetArg("-powenable", 0);
+
+    if (fPoW_Switch == 0) {
+        throw JSONRPCError(RPC_MISC_ERROR, "PoW mining not allowed");
+    }
 
     // Update block
     static unsigned int nTransactionsUpdatedLast;
